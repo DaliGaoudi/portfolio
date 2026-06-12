@@ -37,7 +37,8 @@ const projects: Project[] = [
     liveUrl: "https://smartsendr.org",
     github: "https://github.com/DaliGaoudi",
     imageOrder: "right",
-    imageAlt: "SmartSendr application screenshot",
+    image: "/smartsendr.png",
+    imageAlt: "SmartSendr landing page",
     mockUrl: "smartsendr.org",
   },
   {
@@ -54,7 +55,8 @@ const projects: Project[] = [
     liveUrl: "https://office-ewyknflg7-daligaoudis-projects.vercel.app/",
     github: "https://github.com/DaliGaoudi",
     imageOrder: "left",
-    imageAlt: "Bailiff Office Intelligence screenshot",
+    image: "/bailiff.png",
+    imageAlt: "Bailiff Office Intelligence login",
     mockUrl: "office.vercel.app",
   },
 ];
