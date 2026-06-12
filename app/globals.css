@@ -1,0 +1,191 @@
+@import "tailwindcss";
+
+:root {
+  --bg: oklch(0.17 0.013 264);
+  --surface: oklch(0.215 0.015 264);
+  --surface-2: oklch(0.255 0.017 264);
+  --line: oklch(0.33 0.013 264);
+  --text: oklch(0.95 0.008 250);
+  --muted: oklch(0.69 0.013 255);
+
+  /* Accent — Coral */
+  --accent: oklch(0.74 0.16 32);
+  --accent-ink: oklch(0.25 0.06 32);
+  --accent-30: oklch(0.74 0.16 32 / 0.32);
+  --accent-15: oklch(0.74 0.16 32 / 0.13);
+
+  /* Misc design colors */
+  --term-string: oklch(0.82 0.1 200);
+  --hero-blue: oklch(0.55 0.13 264 / 0.22);
+}
+
+@theme inline {
+  --font-display: var(--font-newsreader);
+  --font-body: var(--font-hanken);
+  --font-mono: var(--font-jetbrains);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--font-hanken), system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+
+::selection {
+  background: var(--accent-30);
+  color: var(--text);
+}
+
+/* ===== Keyframes (ported from design source) ===== */
+@keyframes wordIn {
+  from { opacity: 0; transform: translateY(115%) rotate(2deg); }
+  to { opacity: 1; transform: translateY(0) rotate(0); }
+}
+@keyframes revealUp {
+  from { opacity: 0; transform: translateY(22px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+@keyframes blink {
+  0%, 49% { opacity: 1; }
+  50%, 100% { opacity: 0; }
+}
+@keyframes floatY {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-12px); }
+}
+@keyframes blobA {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  50% { transform: translate(60px, -40px) scale(1.12); }
+}
+@keyframes blobB {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  50% { transform: translate(-50px, 50px) scale(1.18); }
+}
+@keyframes pulseDot {
+  0%, 100% { box-shadow: 0 0 0 0 var(--accent-30); }
+  50% { box-shadow: 0 0 0 7px transparent; }
+}
+@keyframes marquee {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+
+/* ===== Reveal / word animation helpers ===== */
+.reveal { opacity: 0; }
+.reveal.in { animation: revealUp 0.75s cubic-bezier(0.16, 1, 0.3, 1) forwards; }
+.word { opacity: 0; animation: wordIn 0.9s cubic-bezier(0.16, 1, 0.3, 1) forwards; }
+
+.marquee-track { animation: marquee 34s linear infinite; }
+.marquee-track:hover { animation-play-state: paused; }
+
+/* ===== Layout ===== */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 40px;
+}
+
+.hero-grid {
+  display: grid;
+  grid-template-columns: 1.32fr 1fr;
+  gap: 56px;
+  align-items: center;
+  padding: 104px 0 96px;
+}
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+}
+
+.split-section {
+  display: grid;
+  grid-template-columns: 0.4fr 1fr;
+  gap: 56px;
+}
+
+.path-row {
+  display: grid;
+  grid-template-columns: 150px 1fr;
+  gap: 26px;
+}
+
+.toolkit-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 36px 48px;
+}
+
+.edu-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 56px;
+}
+
+.contact-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 56px;
+  align-items: start;
+}
+
+.work-card {
+  grid-template-columns: 1.02fr 1fr;
+}
+.work-card[data-image-order="left"] {
+  grid-template-columns: 1fr 1.02fr;
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 900px) {
+  .container { padding: 0 24px; }
+  .hero-grid {
+    grid-template-columns: 1fr;
+    gap: 40px;
+    padding: 64px 0 64px;
+  }
+  .stats-grid { grid-template-columns: repeat(2, 1fr); gap: 32px 24px; padding: 36px 24px; }
+  .split-section { grid-template-columns: 1fr; gap: 24px; padding: 64px 0; }
+  .toolkit-grid { gap: 28px 32px; }
+  .edu-grid { grid-template-columns: 1fr; gap: 40px; padding: 64px 0; }
+  .contact-grid { grid-template-columns: 1fr; gap: 40px; }
+  .work-card,
+  .work-card[data-image-order="left"] {
+    grid-template-columns: 1fr;
+  }
+  /* Always show text above the image on mobile, regardless of source order */
+  .work-card[data-image-order="left"] > :first-child { order: 2; }
+  .work-card[data-image-order="left"] > :last-child { order: 1; }
+  .nav-collapsible { display: none; }
+}
+
+@media (max-width: 560px) {
+  .stats-grid { grid-template-columns: 1fr 1fr; }
+  .path-row { grid-template-columns: 1fr; gap: 8px; }
+  .contact-row { grid-template-columns: 1fr !important; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .reveal, .word {
+    opacity: 1 !important;
+    animation: none !important;
+    transform: none !important;
+  }
+  .bar-fill { transition: none !important; }
+  .marquee-track,
+  .float-card,
+  .blob-a,
+  .blob-b { animation: none !important; }
+}
