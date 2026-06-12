@@ -1,0 +1,72 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 860 560" font-family="'JetBrains Mono', ui-monospace, monospace">
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0 0 L10 5 L0 10 z" fill="#f0876b"/>
+    </marker>
+    <style>
+      .box { fill: #20242c; stroke: #353a43; stroke-width: 1; }
+      .title { fill: #ecedf0; font-size: 16px; font-weight: 600; }
+      .sub { fill: #a3a7b1; font-size: 11px; }
+      .accent { fill: #f0876b; }
+      .cyan { fill: #74c6d6; }
+      .edge { stroke: #4a5160; stroke-width: 1.5; fill: none; }
+      .elabel { fill: #a3a7b1; font-size: 10px; }
+      .head { fill: #f0876b; font-size: 13px; font-weight: 600; letter-spacing: 0.04em; }
+    </style>
+  </defs>
+
+  <rect width="860" height="560" fill="#181b20"/>
+  <text x="40" y="46" class="head">// BAILIFF OFFICE — SYSTEM ARCHITECTURE</text>
+
+  <!-- Row 1: Client -> API -> Postgres -->
+  <!-- Client -->
+  <rect class="box" x="40" y="120" width="220" height="108" rx="12"/>
+  <text x="60" y="158" class="title">React + Vite</text>
+  <text x="60" y="180" class="sub">SPA · React Router</text>
+  <text x="60" y="198" class="sub">14 modules · Recharts</text>
+  <text x="60" y="216" class="cyan" font-size="10">case mgmt · facturation · registres</text>
+
+  <!-- API -->
+  <rect class="box" x="320" y="120" width="220" height="108" rx="12"/>
+  <text x="340" y="158" class="title">Express 5 API</text>
+  <text x="340" y="180" class="sub">JWT auth · bcrypt</text>
+  <text x="340" y="198" class="sub">Multer uploads · CORS</text>
+  <text x="340" y="216" class="cyan" font-size="10">RESTful · role-based access</text>
+
+  <!-- Postgres -->
+  <rect class="box" x="600" y="120" width="220" height="108" rx="12"/>
+  <text x="620" y="158" class="title">Vercel Postgres</text>
+  <text x="620" y="180" class="sub">SQLite (local dev)</text>
+  <text x="620" y="198" class="sub">'?' → '$n' query layer</text>
+  <text x="620" y="216" class="cyan" font-size="10">migrated legacy data, intact</text>
+
+  <!-- edges row1 -->
+  <line class="edge" x1="260" y1="174" x2="318" y2="174" marker-end="url(#arrow)"/>
+  <text x="266" y="166" class="elabel">REST / JSON</text>
+  <line class="edge" x1="540" y1="174" x2="598" y2="174" marker-end="url(#arrow)"/>
+  <text x="552" y="166" class="elabel">SQL</text>
+
+  <!-- Row 2: services under API and Postgres -->
+  <!-- AI -->
+  <rect class="box" x="320" y="300" width="220" height="96" rx="12"/>
+  <text x="340" y="336" class="title">OpenAI / OpenRouter</text>
+  <text x="340" y="358" class="sub">legal document generation</text>
+  <text x="340" y="378" class="accent" font-size="11">~15 min → under 2 min</text>
+
+  <!-- Blob -->
+  <rect class="box" x="600" y="300" width="220" height="96" rx="12"/>
+  <text x="620" y="336" class="title">Vercel Blob</text>
+  <text x="620" y="358" class="sub">file attachments</text>
+  <text x="620" y="378" class="sub">pdf-parse · json2csv</text>
+
+  <!-- edges row2 -->
+  <line class="edge" x1="430" y1="228" x2="430" y2="298" marker-end="url(#arrow)"/>
+  <text x="438" y="268" class="elabel">/api/ai</text>
+  <line class="edge" x1="430" y1="228" x2="700" y2="298" marker-end="url(#arrow)"/>
+  <text x="560" y="262" class="elabel">/api/attachments</text>
+
+  <!-- Infra strip -->
+  <rect x="40" y="450" width="780" height="70" rx="12" fill="#1c1f26" stroke="#353a43"/>
+  <text x="60" y="480" class="accent" font-size="11" font-weight="600">DEPLOY &amp; OPS</text>
+  <text x="60" y="503" class="sub" font-size="12">Docker  ·  GitHub Actions CI/CD  ·  Vercel Serverless  ·  Morgan logging  ·  Audit trail</text>
+</svg>

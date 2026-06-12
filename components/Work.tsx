@@ -16,8 +16,12 @@ type Project = {
   liveNote?: string;
   github: string;
   imageOrder: "left" | "right";
-  /** Real screenshot path under /public. Falls back to a mock frame if absent. */
+  /** Real screenshot/diagram path under /public. Falls back to a mock frame if absent. */
   image?: string;
+  /** How the image fills the slot. "cover" (default) for screenshots, "contain" for diagrams. */
+  imageFit?: "cover" | "contain";
+  /** Looping muted video path under /public (e.g. a screen recording). Takes priority over image. */
+  video?: string;
   imageAlt: string;
   mockUrl: string;
 };
@@ -55,8 +59,9 @@ const projects: Project[] = [
     liveUrl: "https://office-ewyknflg7-daligaoudis-projects.vercel.app/",
     github: "https://github.com/DaliGaoudi",
     imageOrder: "left",
-    image: "/bailiff.png",
-    imageAlt: "Bailiff Office Intelligence login",
+    image: "/bailiff-architecture.svg",
+    imageFit: "contain",
+    imageAlt: "Bailiff Office Intelligence — system architecture diagram",
     mockUrl: "office.vercel.app",
   },
 ];
@@ -70,14 +75,46 @@ const tagStyle: CSSProperties = {
   borderRadius: 6,
 };
 
-function MockShot({ url, alt, image }: { url: string; alt: string; image?: string }) {
+function MockShot({
+  url,
+  alt,
+  image,
+  video,
+  fit = "cover",
+}: {
+  url: string;
+  alt: string;
+  image?: string;
+  video?: string;
+  fit?: "cover" | "contain";
+}) {
+  if (video) {
+    return (
+      <video
+        src={video}
+        autoPlay
+        muted
+        loop
+        playsInline
+        aria-label={alt}
+        style={{ display: "block", width: "100%", height: "100%", objectFit: "cover", minHeight: 360, background: "var(--bg)" }}
+      />
+    );
+  }
   if (image) {
     // eslint-disable-next-line @next/next/no-img-element
     return (
       <img
         src={image}
         alt={alt}
-        style={{ display: "block", width: "100%", height: "100%", objectFit: "cover", minHeight: 360 }}
+        style={{
+          display: "block",
+          width: "100%",
+          height: "100%",
+          objectFit: fit,
+          minHeight: 360,
+          background: fit === "contain" ? "var(--surface)" : undefined,
+        }}
       />
     );
   }
@@ -317,7 +354,7 @@ export default function Work() {
                   : { borderLeft: "1px solid var(--line)" }),
               }}
             >
-              <MockShot url={p.mockUrl} alt={p.imageAlt} image={p.image} />
+              <MockShot url={p.mockUrl} alt={p.imageAlt} image={p.image} video={p.video} fit={p.imageFit} />
             </div>
           );
 
