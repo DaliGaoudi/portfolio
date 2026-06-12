@@ -56,7 +56,7 @@ const projects: Project[] = [
       "Serverless deploy on Vercel, CI/CD via GitHub Actions",
     ],
     tags: ["React", "Node / Express", "PostgreSQL", "Docker", "OpenRouter"],
-    liveUrl: "https://office-ewyknflg7-daligaoudis-projects.vercel.app/",
+    liveUrl: "https://bailiff-demo.vercel.app",
     github: "https://github.com/DaliGaoudi",
     imageOrder: "left",
     image: "/bailiff-dashboard.png",
