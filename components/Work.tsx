@@ -39,7 +39,7 @@ const projects: Project[] = [
     ],
     tags: ["React", "FastAPI", "PostgreSQL", "OpenAI API", "Firebase"],
     liveUrl: "https://smartsendr.org",
-    github: "https://github.com/DaliGaoudi",
+    github: "https://github.com/DaliGaoudi/SmartReach",
     imageOrder: "right",
     image: "/smartsendr.png",
     imageAlt: "SmartSendr landing page",
