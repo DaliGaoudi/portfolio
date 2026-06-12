@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Newsreader, Hanken_Grotesk, JetBrains_Mono } from "next/font/google";
+import { Analytics } from "@vercel/analytics/next";
 import "./globals.css";
 
 const newsreader = Newsreader({
@@ -80,7 +81,10 @@ export default function RootLayout({
       lang="en"
       className={`${newsreader.variable} ${hanken.variable} ${jetbrains.variable}`}
     >
-      <body>{children}</body>
+      <body>
+        {children}
+        <Analytics />
+      </body>
     </html>
   );
 }
