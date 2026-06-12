@@ -59,9 +59,8 @@ const projects: Project[] = [
     liveUrl: "https://office-ewyknflg7-daligaoudis-projects.vercel.app/",
     github: "https://github.com/DaliGaoudi",
     imageOrder: "left",
-    image: "/bailiff-architecture.svg",
-    imageFit: "contain",
-    imageAlt: "Bailiff Office Intelligence — system architecture diagram",
+    image: "/bailiff-dashboard.png",
+    imageAlt: "Bailiff Office Intelligence — dashboard (demo data)",
     mockUrl: "office.vercel.app",
   },
 ];
