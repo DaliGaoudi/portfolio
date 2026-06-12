@@ -59,7 +59,7 @@ export default function About() {
             textWrap: "pretty",
           }}
         >
-          I work comfortably in German (B2) and English (C1), and I care a lot about
+          I work comfortably in German (C1) and English (C1), and I care a lot about
           clean APIs, security done right, and using AI where it genuinely removes
           grunt work.
         </p>

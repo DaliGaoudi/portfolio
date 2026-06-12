@@ -4,7 +4,7 @@ const display = "var(--font-newsreader), serif";
 const languages: { name: string; level: string; pct: number; delay: number }[] = [
   { name: "Arabic", level: "Native", pct: 100, delay: 0 },
   { name: "English", level: "C1 · Fluent", pct: 90, delay: 0.1 },
-  { name: "German", level: "B2", pct: 72, delay: 0.2 },
+  { name: "German", level: "C1", pct: 90, delay: 0.2 },
   { name: "French", level: "B2", pct: 72, delay: 0.3 },
 ];
 
