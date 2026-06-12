@@ -44,8 +44,8 @@ export default function About() {
             textWrap: "pretty",
           }}
         >
-          I&apos;m finishing my B.Sc. in Information Engineering at TU Munich
-          (graduating Feb 2026), with a focus on machine learning, databases, and
+          I hold a B.Sc. in Information Engineering from TU Munich
+          (graduated Feb 2026), with a focus on machine learning, databases, and
           software engineering. Along the way I interned building secure Angular
           apps, and did research on ML-supported data-repair pipelines.
         </p>

@@ -36,7 +36,7 @@ export default function EducationLanguages() {
           }}
         >
           <div style={{ fontFamily: mono, fontSize: 12, color: "var(--muted)", marginBottom: 14 }}>
-            GRAD 02 / 2026 · HEILBRONN
+            GRADUATED 02 / 2026 · HEILBRONN
           </div>
           <h3 style={{ fontFamily: display, fontWeight: 500, fontSize: 25, margin: "0 0 6px", lineHeight: 1.2 }}>
             B.Sc. Information Engineering
