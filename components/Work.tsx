@@ -57,7 +57,7 @@ const projects: Project[] = [
     ],
     tags: ["React", "Node / Express", "PostgreSQL", "Docker", "OpenRouter"],
     liveUrl: "https://bailiff-demo.vercel.app",
-    github: "https://github.com/DaliGaoudi",
+    github: "https://github.com/DaliGaoudi/Office_App/tree/demo",
     imageOrder: "left",
     image: "/bailiff-dashboard.png",
     imageAlt: "Bailiff Office Intelligence — dashboard (demo data)",
