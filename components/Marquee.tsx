@@ -2,15 +2,19 @@ const mono = "var(--font-jetbrains), monospace";
 
 const tokens = [
   "React",
-  "FastAPI",
-  "Node.js",
+  "Next.js",
   "TypeScript",
+  "Node.js",
+  "Express",
   "PostgreSQL",
+  "Supabase",
+  "Google Gemini",
+  "OpenAI",
+  "Stripe",
+  "Gmail API",
   "Docker",
-  "Angular",
-  "OpenAI API",
   "GitHub Actions",
-  "Python",
+  "Vercel",
 ];
 
 function Row({ ariaHidden }: { ariaHidden?: boolean }) {

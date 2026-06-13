@@ -368,20 +368,20 @@ export default function Hero() {
                 <div style={{ color: "var(--muted)" }}>{"{"}</div>
                 <div>
                   &nbsp;&nbsp;<span style={termKey}>&quot;frontend&quot;</span>: [
-                  <span style={termString}>&quot;React&quot;</span>, <span style={termString}>&quot;Angular&quot;</span>,{" "}
+                  <span style={termString}>&quot;React&quot;</span>, <span style={termString}>&quot;Next.js&quot;</span>,{" "}
                   <span style={termString}>&quot;TS&quot;</span>],
                 </div>
                 <div>
                   &nbsp;&nbsp;<span style={termKey}>&quot;backend&quot;</span>:&nbsp; [
-                  <span style={termString}>&quot;FastAPI&quot;</span>, <span style={termString}>&quot;Node&quot;</span>],
+                  <span style={termString}>&quot;Node&quot;</span>, <span style={termString}>&quot;Express&quot;</span>],
                 </div>
                 <div>
                   &nbsp;&nbsp;<span style={termKey}>&quot;data&quot;</span>:&nbsp;&nbsp;&nbsp;&nbsp; [
-                  <span style={termString}>&quot;PostgreSQL&quot;</span>],
+                  <span style={termString}>&quot;PostgreSQL&quot;</span>, <span style={termString}>&quot;Supabase&quot;</span>],
                 </div>
                 <div>
                   &nbsp;&nbsp;<span style={termKey}>&quot;ai&quot;</span>:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; [
-                  <span style={termString}>&quot;OpenAI&quot;</span>, <span style={termString}>&quot;OpenRouter&quot;</span>],
+                  <span style={termString}>&quot;Gemini&quot;</span>, <span style={termString}>&quot;OpenAI&quot;</span>],
                 </div>
                 <div>
                   &nbsp;&nbsp;<span style={termKey}>&quot;ship&quot;</span>:&nbsp;&nbsp;&nbsp;&nbsp; [
