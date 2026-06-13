@@ -32,12 +32,12 @@ const projects: Project[] = [
     chip: "2024–2025 · SaaS",
     title: "SmartSendr",
     description:
-      "Personalized cold emails, scaled — an AI outreach platform that turns your résumé and contacts into tailored messages. I built the whole thing: database architecture, a FastAPI backend with 10+ documented REST endpoints, auth, campaign management, and OpenAI integration with quality filters.",
+      "Personalized cold emails, scaled — an AI outreach platform that turns your résumé and contacts into tailored messages. I built it end to end on Next.js: Supabase auth and Postgres, Google Gemini for generation with quality filters, Gmail integration for sending, and Stripe for billing.",
     outcomes: [
       "Cut manual post-processing per campaign by ~70%",
       "GDPR-compliant storage for contact & comms data",
     ],
-    tags: ["React", "FastAPI", "PostgreSQL", "OpenAI API", "Firebase"],
+    tags: ["Next.js", "TypeScript", "Supabase", "Google Gemini", "Stripe", "Gmail API"],
     liveUrl: "https://smartsendr.org",
     github: "https://github.com/DaliGaoudi/SmartReach",
     imageOrder: "right",
